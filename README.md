@@ -1,1 +1,1 @@
-# Simple-CSS
+# Simple SCSS
