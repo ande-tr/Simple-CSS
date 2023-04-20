@@ -1,0 +1,455 @@
+//Spacing
+$siblings-gap: 15px;
+$list-elements-gap: 5px;
+
+$space-l: 30px;
+$space-md: 20px;
+$space-s: 15px;
+$space-xs: 10px;
+
+//Colors
+$background-color: #f7f7f7;
+
+$primary-color: #1d69dc;
+$primary-button-font-color: #f7f7f7;
+
+$on-light-color: #232323;
+$on-dark-color: #f7f7f7;
+
+$general-color: null;
+
+$url-color: $primary-color;
+
+$navigation-color: $primary-color;
+
+$navigation-highlight-bg-color: $on-dark-color;
+$navigation-highlight-font-color: $navigation-color;
+$navigation-highlight-bg-color--hover: $on-light-color;
+$navigation-highlight-font-color--hover: $navigation-highlight-bg-color;
+
+//Buttons
+$button-padding: 13px 30px;
+
+//Fonts
+$body-font-size: 1rem;
+$h1-font-size: 2.4rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.8rem;
+$h4-font-size: 1.6rem;
+$h5-font-size: 1.4rem;
+$h6-font-size: 1.2rem;
+
+//Hero
+$hero-background: url("https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+
+//Globals
+$border-radius: 0;
+
+$element-height: 44px;
+
+$navigation-height: 70px;
+
+$container-width: 990px;
+$navigation-width: $container-width;
+
+//even though h5 and h6 are smaller than body text by default
+//they are header so they should be bigger
+
+/* Apply a general color scheme */
+@media (prefers-color-scheme: no-preference) {
+    $general-color: $on-light-color;
+}
+/* Apply a light color scheme */
+@media (prefers-color-scheme: light) {
+    $general-color: $on-light-color;
+}
+/* Apply a dark color scheme */
+@media (prefers-color-scheme: dark) {
+    $general-color: $on-dark-color;
+}
+
+html {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: sans-serif;
+    overscroll-behavior-y: none;
+}
+
+body{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+ol, ul {
+    margin: $siblings-gap 0px $siblings-gap 0px;
+    padding: 0;
+    font-weight: normal;
+}
+ul > li,
+ol > li{
+    margin: $space-s 0px 0px 0px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a{
+    display: inline-block;
+    color: $url-color;
+    text-decoration: none;
+}
+
+fieldset{
+    border: 1px solid #000;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: sans-serif;
+    color: $general-color;
+}
+//the form takes the width for the element it is placed in
+//if you want the form to have a specific width, wrap it in a div
+//and set the width of the wrapper
+h1{
+    font-size: $h1-font-size;
+}
+h2{
+    font-size: $h2-font-size;
+}
+h3{
+    font-size: $h3-font-size;
+}
+h4{
+    font-size: $h4-font-size;
+}
+h5{
+    font-size: $h5-font-size;
+}
+h6{
+    font-size: $h6-font-size;
+}
+h1, h2, h3, h4, h5, h6{
+    padding: 0px;
+    margin: 0px 0px $space-xs 0px;
+    font-weight: normal;
+}
+p{
+    font-weight: normal;
+    padding: 0px;
+    margin: $siblings-gap 0px $siblings-gap 0px;
+}
+p:first-of-type{
+    margin-top: 0px;
+}
+p:last-of-type{
+    margin-bottom: 0px;
+}
+
+//Classes
+.simple-container{
+    width: 100%;
+    max-width: $container-width;
+    margin: auto;
+    padding: $space-l 0px $space-l 0px;
+}
+
+.simple-navigation{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0px;
+    height: $navigation-height;
+    background-color: $navigation-color;
+    display: flex;
+    align-items: center;
+}
+
+.simple-navigation>ul{
+    width: 100%;
+    max-width: $navigation-width;
+    margin: auto;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.simple-navigation>ul>li{
+    margin: 0;
+    padding: 0px 0px 2px 0px;
+    border: 1px solid transparent;
+    color: $on-dark-color;
+    cursor: pointer;
+}
+
+.simple-navigation>ul>li:hover{
+    border-bottom: 1px solid $on-dark-color;
+}
+
+.simple-navigation>ul.simple-navigation--wrapped>li{
+    padding: 10px;
+}
+
+.simple-navigation>ul.simple-navigation--wrapped>li:hover{
+    border: 1px solid $on-dark-color;
+}
+
+.simple-navigation>ul.simple-navigation--topped>li{
+    padding: 2px 0px 0px 0px;
+}
+
+.simple-navigation>ul.simple-navigation--topped>li:hover{
+    border-bottom: none;
+    border-top: 1px solid $on-dark-color;
+}
+
+.simple-navigation>ul>li.highlighted{
+    padding: 10px;
+    background-color: $navigation-highlight-bg-color;
+    color: $navigation-highlight-font-color;
+    border: none;
+    border-radius: $border-radius;
+}
+.simple-navigation>ul>li.highlighted:hover{
+    padding: 10px;
+    background-color: $navigation-highlight-bg-color--hover;
+    color: $navigation-highlight-font-color--hover;
+    border: none;
+    border-radius: $border-radius;
+}
+
+.simple-hero{
+    width: 100%;
+    height: 100vh;
+    background: $hero-background;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.simple-hero__content{
+    width: 100%;
+    max-width: $container-width;
+}
+
+.simple-url{
+    display: inline-block;
+    padding: 0px 0px 2px 0px;
+    border-bottom: 1px solid transparent;
+}
+.simple-url:hover{
+    border-bottom: 1px solid $url-color;
+}
+
+.simple-form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.simple-input{
+    display: block;
+    width: 100%;
+    height: $element-height;
+    border-radius: $border-radius;
+    border: 1px solid $general-color;
+    outline: none;
+    font-size: $body-font-size;
+    padding: 0px $space-md 0px $space-md;
+}
+.simple-input:last-of-type{
+    margin-bottom: 0px;
+}
+.simple-input:focus{
+    outline: 1px solid $primary-color;
+    border: 1px solid $primary-color;
+}
+.simple-input:hover{
+    border: 1px solid $primary-color;
+}
+
+.simple-button{
+    border-radius: $border-radius;
+    outline: 1px solid transparent;
+    border: 1px solid transparent;
+    margin: auto;
+    margin-top: $siblings-gap;
+    padding: $button-padding;
+    font-size: $body-font-size;
+    cursor: pointer;
+    background-clip: padding-box;
+    border-radius: $border-radius;
+}
+.simple-button--primary{
+    background-color: $primary-color;
+    color: $on-dark-color;
+}
+.simple-button--primary:hover{
+    outline: 1px solid $primary-color;
+    border: 1px solid transparent;
+}
+.simple-button--primary:focus{
+    outline: 2px solid $primary-color;
+    border: 1px solid transparent;
+}
+.simple-button--secondary{
+    border: 1px solid $primary-color;
+    background-color: transparent;
+    color: $primary-color;
+}
+.simple-button--secondary:hover{
+    outline: 1px solid $primary-color;
+}
+.simple-button--secondary:focus{
+    outline: 2px solid $primary-color;
+}
+.simple-fieldset{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: $siblings-gap 0px $siblings-gap 0px;
+    border-color: $general-color;
+    padding: $space-md;
+    border-radius: $border-radius;
+}
+.simple-row{
+    margin: $space-xs 0px $space-xs 0px;
+    width: 100%;
+    display: flex;
+}
+.simple-box{
+    display: inline-block;
+    cursor: pointer;
+}
+.simple-box input[type=checkbox],
+.simple-box input[type=radio]{
+    margin: 0px $siblings-gap 0px 0px;
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    outline: 2px solid transparent;
+}
+.simple-box:hover input[type=checkbox],
+.simple-box:hover input[type=radio]{
+    outline: 1px solid $primary-color;
+}
+.simple-box input[type=checkbox]:focus,
+.simple-box input[type=radio]:focus{
+    outline: 2px solid $primary-color;
+}
+.simple-column--2{
+    width: 50%;
+    display: inline-block;
+}
+.simple-column--3{
+    width: calc(100% / 3);
+    display: inline-block;
+}
+
+@media (min-width: 1025px){
+    .simple-row--single-l{
+        margin: $space-xs 0px $space-xs 0px;
+        width: 100%;
+    }
+    .simple-row--half-l{
+        width: calc((100% / 2) - $siblings-gap/1.33);
+    }
+    .simple-row--third-l{
+        width: calc((100% / 3) - $siblings-gap);
+    }
+}
+
+@media (max-width:1100px){
+    .simple-container{
+        padding: $space-l;
+    }
+    .simple-navigation > ul{
+        padding: 0px $space-l 0px $space-l;
+    }
+    .simple-hero__content{
+        padding: $space-l;
+    }
+}
+
+@media (max-width: 1024px){
+    .simple-row--single-md{
+        margin: $space-xs 0px $space-xs 0px;
+        width: 100%;
+    }
+    .simple-row--half-md{
+        width: calc((100% / 2) - $siblings-gap/1.33);
+    }
+    .simple-row--third-md{
+        width: calc((100% / 3) - $siblings-gap);
+    }
+}
+
+@media (max-width: 768px){
+    .simple-row--single-s{
+        margin: $space-xs 0px $space-xs 0px;
+        width: 100%;
+    }
+    .simple-row--half-s{
+        width: calc((100% / 2) - $siblings-gap/1.33);
+    }
+    .simple-row--third-s{
+        width: calc((100% / 3) - $siblings-gap);
+    }
+}
+
+@media (max-width: 768px){
+    .simple-row--single-xs{
+        margin: $space-xs 0px $space-xs 0px;
+        width: 100%;
+    }
+    .simple-row--half-xs{
+        width: calc((100% / 2) - $siblings-gap/1.33);
+    }
+    .simple-row--third-xs{
+        width: calc((100% / 3) - $siblings-gap);
+    }
+    .simple-container{
+        padding: $space-md;
+    }
+    .simple-navigation > ul{
+        padding: 0px $space-md 0px $space-md;
+    }
+    .simple-hero__content{
+        padding: $space-md;
+    }
+    .simple-button{
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px){
+    .simple-container{
+        padding: $space-s;
+    }
+    .simple-navigation > ul{
+        padding: 0px $space-s 0px $space-s;
+    }
+    .simple-hero__content{
+        padding: $space-s;
+    }
+}
