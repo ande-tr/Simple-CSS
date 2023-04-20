@@ -4,6 +4,11 @@ Simple SCSS is a short layouting SCSS file that you can use to create a template
 
 It normalizes HTML tags and applies basic styling and responsive to a few tags. It also contains basic responsive classes such as rows and columns, and a basic menu.
 
+## How to use:
+For VS Code: Add the file to your project and use the ```Live SASS Compiler``` extension to compile it into CSS.
+
+## Examples:
+
 Simple form:
 ```
   <form class="simple-form">
