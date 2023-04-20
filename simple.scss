@@ -418,16 +418,6 @@ p:last-of-type{
 }
 
 @media (max-width: 768px){
-    .simple-row--single-xs{
-        margin: $space-xs 0px $space-xs 0px;
-        width: 100%;
-    }
-    .simple-row--half-xs{
-        width: calc((100% / 2) - $siblings-gap/1.33);
-    }
-    .simple-row--third-xs{
-        width: calc((100% / 3) - $siblings-gap);
-    }
     .simple-container{
         padding: $space-md;
     }
@@ -443,6 +433,16 @@ p:last-of-type{
 }
 
 @media (max-width: 575px){
+    .simple-row--single-xs{
+        margin: $space-xs 0px $space-xs 0px;
+        width: 100%;
+    }
+    .simple-row--half-xs{
+        width: calc((100% / 2) - $siblings-gap/1.33);
+    }
+    .simple-row--third-xs{
+        width: calc((100% / 3) - $siblings-gap);
+    }
     .simple-container{
         padding: $space-s;
     }
